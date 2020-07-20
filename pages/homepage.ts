@@ -27,35 +27,37 @@ export class HomePage {
 
     async toCheckIconAvailable() {
        // element(by.css('h1')).isPresent
-      expect(helper.elementAvailable(dashboardloc.propertiesFileData("loc.icon.refresh")))
-    //   .then(function(icon)
-    //    {
-    //        if(icon==true)
-    //        {
-    //            console.log("Refresh icon is available at dashboard page")
-    //        }
-    //        else{
-    //            console.log("refresh icon is not available")
-    //        }
-    //    });
+      // expect(by.css('h1')).to.eventually.be.present()
+      // expect(element.all(by.css('.items)).isPresent()).toBe(true);
+     helper.elementAvailable(dashboardloc.propertiesFileData("loc.icon.refresh"))
+      .then(function(icon)
+       {
+           if(icon==true)
+           {
+               console.log("Refresh icon is available at dashboard page")
+           }
+           else{
+               console.log("refresh icon is not available")
+           }
+       });
     
         
         
     }
 
-    async toCheckLogo() {
-     var logo=  await helper.elementIsDisplay(dashboardloc.propertiesFileData("loc.logo.homepage")).then(function(logo)
-     {
-         if(logo==true)
-         {
-             console.log("logo is displaying")
-         }
-         else{
-             console.log("logo is not displaying" )
-         }
-     });
+    // async toCheckLogo() {
+    //  var logo=  await helper.elementIsDisplay(dashboardloc.propertiesFileData("loc.logo.homepage")).then(function(logo)
+    //  {
+    //      if(logo==true)
+    //      {
+    //          console.log("logo is displaying")
+    //      }
+    //      else{
+    //          console.log("logo is not displaying" )
+    //      }
+    //  });
       
-    }
+    // }
 
     async listOfAvailableProjects()
     {

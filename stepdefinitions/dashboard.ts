@@ -14,9 +14,9 @@ Then(/^Verify the refersh icon is available on the tab dashboard page$/, { timeo
 	await homePage.toCheckIconAvailable();
 });
 
-Then(/^Verify atmecs logo on the dashboard page$/, { timeout: 70000 }, async () => {
-await	homePage.toCheckLogo();
-});
+// Then(/^Verify atmecs logo on the dashboard page$/, { timeout: 70000 }, async () => {
+// await	homePage.toCheckLogo();
+// });
 
 Then(/^Verify whether all the project available on the dashboard page$/, { timeout: 50000 }, async () => {
 await	homePage.listOfAvailableProjects();
@@ -28,4 +28,20 @@ Then(/^Click REST API TEST RESULT Link in dashboard$/,{ timeout: 50000 }, async 
 
 Then(/^Select status as pass$/, { timeout: 50000 }, async () => {
 	homePage.filterpass();
+});
+
+Then(/^Able to get pass test cases$/,{ timeout: 50000 }, async (table:TableDefinition) =>  {
+	var detail=table.raw();
+	var status= await element(by.css("#view-report-filter > div.slimScrollDiv > scrollable > table")).getText();
+   
+     console.log(status);
+    
+     
+         detail.forEach(function(value)
+         {
+            
+             console.log("expec :"+value);
+             
+         });
+
 });
